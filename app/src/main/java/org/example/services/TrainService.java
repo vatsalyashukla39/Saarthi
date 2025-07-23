@@ -20,7 +20,7 @@ public class TrainService {
         this.trainList = objectMapper.readValue(trains, new TypeReference<List<Train>>() {});
     }
     public List<Train> searchTrains(String sourceStation, String destinationStation){
-        return trainList.stream().filter(train -> validTrain(train,sourceStation,destinationStation)).collect(Collectors.toList());
+        return trainList.stream().parallel().filter(train -> validTrain(train,sourceStation,destinationStation)).collect(Collectors.toList());
     }
     public boolean validTrain(Train train, String sourceStation, String destinationStation){
         List<String> stationOrder=train.getStations();

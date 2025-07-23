@@ -59,7 +59,7 @@ public class UserBookingService {
     public Boolean cancelBooking(String ticketId){
        try{
         List<Ticket> l2=user.getTicketsBooked();
-        List<Ticket> l1=l2.stream().filter(ticket -> (!ticket.getTicketId().equalsIgnoreCase(ticketId))).collect(Collectors.toList());
+        List<Ticket> l1=l2.stream().parallel().filter(ticket -> (!ticket.getTicketId().equalsIgnoreCase(ticketId))).collect(Collectors.toList());
         user.setTicketsBooked(l1);
         saveUserListToFile();
         return l1.size()!=l2.size();}
@@ -75,19 +75,4 @@ public class UserBookingService {
             return null;
         }
     }
-//    public boolean bookTickets(Train train) {
-//        try {
-//            if (train.getAvailableSeats() >= passengerCount) {
-//                List<Ticket> tickets = train.bookSeats(user, passengerCount);
-//                user.getTicketsBooked().addAll(tickets);
-//                train.setAvailableSeats(train.getAvailableSeats() - passengerCount);
-//                saveUserListToFile();
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } catch (IOException ex) {
-//            return false;
-//        }
-//    }
 }
