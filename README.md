@@ -31,14 +31,14 @@ app/
 
 ---
 
-## 🛠️ Requirements
+##  Requirements
 
 - Java 8.0 or higher
 - Maven (for build and dependency management)
 
 ---
 
-## 🎯 Getting Started
+##  Getting Started
 
 1. **Clone the repository**  
    ```bash
