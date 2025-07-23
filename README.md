@@ -21,12 +21,12 @@ An educational Java application demonstrating a simple ticket booking system usi
 
 ##  Project Structure
 app/
-└── src/main/java/org/example/
-├── entities/
-├── localDb/ 
-├── service/ 
-├── util/ 
-└── App.java # Application entry point 
+-└── src/main/java/org/example/
+-├── entities/
+-├── localDb/ 
+-├── service/ 
+-├── util/ 
+-└── App.java # Application entry point 
 
 
 ---
